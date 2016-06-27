@@ -35,8 +35,29 @@ void loop() {
   }
 
   // printar ut vilken knapp som är tryck till serie monitorn.
-  Serial.print(digitalRead(LEFT_BTN_PIN));
+  
+  if(digitalRead(LEFT_BTN_PIN)==0){
+    Serial.write(0);
+    delay(50);
+    }
+    
+  if(digitalRead(RIGHT_BTN_PIN)==0){
+    Serial.write(1);
+    delay(50);
+    }
+    
+  if(digitalRead(DOWN_BTN_PIN)==0){
+    Serial.write(2);
+    delay(50);
+    }
+    
+  if(digitalRead(UP_BTN_PIN)==0){
+    Serial.write(3);
+    delay(50);
+    }
+  
+ /* Serial.print(digitalRead(LEFT_BTN_PIN));
   Serial.print(digitalRead(RIGHT_BTN_PIN));
   Serial.print(digitalRead(UP_BTN_PIN));
-  Serial.println(digitalRead(DOWN_BTN_PIN));
+  Serial.println(digitalRead(DOWN_BTN_PIN));*/
 }
